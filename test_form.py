@@ -15,6 +15,7 @@ def driver():
     yield driver
     driver.quit()
 
+
 def test_login_success(driver):
     driver.get("https://the-internet.herokuapp.com/login")
     username_input = driver.find_element(By.ID, "username")
@@ -25,6 +26,7 @@ def test_login_success(driver):
     submit_button.click()
     success = driver.find_element(By.CLASS_NAME, "success")
     assert success
+
 
 def test_login_failure(driver):
     driver.get("https://the-internet.herokuapp.com/login")
